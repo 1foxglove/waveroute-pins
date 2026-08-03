@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="ru" data-theme="dark">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Waveroute.pins</title>
+  <link rel="stylesheet" href="popup.css">
+</head>
+<body>
+  <div class="app-container">
+    <!-- Header -->
+    <header class="header">
+      <div class="brand">
+        <h1 class="brand-title"><span class="brand-gradient-letter">W</span>averoute.pins</h1>
+      </div>
+      <button id="themeToggle" class="icon-btn" title="Toggle Theme">
+        <svg id="themeIconDark" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <circle cx="12" cy="12" r="5"></circle>
+          <line x1="12" y1="1" x2="12" y2="3"></line>
+          <line x1="12" y1="21" x2="12" y2="23"></line>
+          <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+          <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+          <line x1="1" y1="12" x2="3" y2="12"></line>
+          <line x1="21" y1="12" x2="23" y2="12"></line>
+          <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+          <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+        </svg>
+        <svg id="themeIconLight" class="hidden" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+        </svg>
+      </button>
+    </header>
+
+    <!-- Main Content -->
+    <main class="content">
+      <!-- Section 1: Limit Selection -->
+      <section class="card control-section">
+        <div class="section-label">Quantity limit</div>
+        
+        <div class="limit-presets">
+          <button class="preset-btn" data-limit="10">10</button>
+          <button class="preset-btn active" data-limit="25">25</button>
+          <button class="preset-btn" data-limit="50">50</button>
+          <button class="preset-btn" data-limit="100">100</button>
+          <button class="preset-btn" data-limit="0">All</button>
+        </div>
+
+        <div class="custom-limit-input">
+          <span>Custom amount</span>
+          <input type="number" id="customLimit" value="25" min="1" max="1000" placeholder="25">
+        </div>
+      </section>
+
+      <!-- Section 2: Scan Action -->
+      <section class="card action-card">
+        <button id="startScanBtn" class="btn btn-primary">
+          <span>Start scan</span>
+        </button>
+        <button id="stopScanBtn" class="btn btn-danger hidden">
+          <span>Stop scan</span>
+        </button>
+
+        <!-- Progress Container -->
+        <div id="progressContainer" class="progress-container hidden">
+          <div class="progress-bar-bg">
+            <div id="progressBarFill" class="progress-bar-fill" style="width: 0%"></div>
+          </div>
+          <div class="progress-status-text">
+            <span id="progressStatus">Scanning page...</span>
+            <span id="progressCount">0 / 25</span>
+          </div>
+        </div>
+      </section>
+
+      <!-- Section 3: Summary Counter & Export Actions -->
+      <section class="card export-card">
+        <div class="summary-header">
+          <span class="summary-label">Collected pins</span>
+          <span id="pinCountBadge" class="count-badge">0</span>
+        </div>
+
+        <div class="export-actions">
+          <button id="downloadZipBtn" class="btn btn-accent" disabled>
+            <span>Download ZIP (<span id="selectedCountText">0</span>)</span>
+          </button>
+
+          <button id="copyFigmaBtn" class="btn btn-secondary" disabled>
+            <span>Copy for Figma</span>
+          </button>
+        </div>
+      </section>
+    </main>
+
+    <!-- Notification Toast -->
+    <div id="toast" class="toast hidden"></div>
+  </div>
+
+  <script src="../lib/jszip.min.js"></script>
+  <script src="popup.js"></script>
+</body>
+</html>

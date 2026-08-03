@@ -1,0 +1,25 @@
+# macOS & OS metadata
+.DS_Store
+.AppleDouble
+.LSOverride
+Thumbs.db
+
+# Python & temporary generator scripts
+__pycache__/
+*.pyc
+generate_icons.py
+generate_w_icons.py
+generate_svg_logo.py
+
+# Build artifacts & distributions
+/dist/
+*.zip
+
+# IDE & Editor folders
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# Local test mock pages
+test_pinterest_board.html

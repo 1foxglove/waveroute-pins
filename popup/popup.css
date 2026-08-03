@@ -1,0 +1,331 @@
+/* Pinterest-style Green & Black UI System (Waveroute.pins Clean Typography) */
+:root[data-theme="dark"] {
+  --bg-main: #0c0c0e;
+  --bg-card: #161619;
+  --bg-card-hover: #1e1e22;
+  --border-color: #26262a;
+  --text-primary: #f4f4f5;
+  --text-secondary: #a1a1aa;
+  --text-muted: #71717a;
+  --accent-green: #00c853;
+  --accent-green-hover: #00b048;
+  --accent-green-light: rgba(0, 200, 83, 0.15);
+  --danger-color: #e53935;
+  --danger-hover: #d32f2f;
+  --input-bg: #0f0f12;
+}
+
+:root[data-theme="light"] {
+  --bg-main: #f4f4f5;
+  --bg-card: #ffffff;
+  --bg-card-hover: #f1f5f9;
+  --border-color: #e4e4e7;
+  --text-primary: #18181b;
+  --text-secondary: #52525b;
+  --text-muted: #94a3b8;
+  --accent-green: #00c853;
+  --accent-green-hover: #00b048;
+  --accent-green-light: rgba(0, 200, 83, 0.12);
+  --danger-color: #e53935;
+  --danger-hover: #d32f2f;
+  --input-bg: #f4f4f5;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  user-select: none;
+}
+
+body {
+  width: 360px;
+  background-color: var(--bg-main);
+  color: var(--text-primary);
+  overflow-x: hidden;
+  transition: background-color 0.2s ease, color 0.2s ease;
+}
+
+.app-container {
+  display: flex;
+  flex-direction: column;
+  padding: 20px 18px;
+  gap: 16px;
+}
+
+/* Header */
+.header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding-bottom: 2px;
+}
+
+.brand-title {
+  font-size: 19px;
+  font-weight: 800;
+  letter-spacing: -0.5px;
+  color: var(--text-primary);
+}
+
+.brand-gradient-letter {
+  background: linear-gradient(135deg, #00ff88 0%, #00c853 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  font-weight: 900;
+  display: inline-block;
+  margin-right: 1px;
+}
+
+.icon-btn {
+  background: var(--bg-card);
+  border: 1px solid var(--border-color);
+  color: var(--text-secondary);
+  border-radius: 50%;
+  width: 34px;
+  height: 34px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.15s ease;
+}
+
+.icon-btn:hover {
+  background: var(--bg-card-hover);
+  color: var(--text-primary);
+}
+
+/* Main Content Layout */
+.content {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+/* Cards */
+.card {
+  background: var(--bg-card);
+  border: 1px solid var(--border-color);
+  border-radius: 20px;
+  padding: 16px 18px;
+}
+
+/* Section 1: Control Section */
+.control-section {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.section-label {
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--text-secondary);
+}
+
+.limit-presets {
+  display: flex;
+  gap: 6px;
+}
+
+.preset-btn {
+  flex: 1;
+  padding: 9px 0;
+  background: var(--input-bg);
+  border: 1px solid var(--border-color);
+  color: var(--text-secondary);
+  border-radius: 20px;
+  font-size: 12px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.15s ease;
+}
+
+.preset-btn:hover {
+  border-color: var(--text-secondary);
+  color: var(--text-primary);
+}
+
+.preset-btn.active {
+  background: var(--text-primary);
+  border-color: var(--text-primary);
+  color: var(--bg-main);
+}
+
+.custom-limit-input {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  font-size: 13px;
+  font-weight: 500;
+  color: var(--text-secondary);
+  padding-top: 2px;
+}
+
+.custom-limit-input input {
+  width: 80px;
+  padding: 7px 12px;
+  background: var(--input-bg);
+  border: 1px solid var(--border-color);
+  color: var(--text-primary);
+  border-radius: 16px;
+  font-size: 13px;
+  font-weight: 700;
+  text-align: center;
+}
+
+.custom-limit-input input:focus {
+  outline: none;
+  border-color: var(--accent-green);
+}
+
+/* Section 2: Action Card */
+.action-card {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.btn {
+  width: 100%;
+  padding: 12px 18px;
+  border-radius: 26px;
+  border: none;
+  font-size: 14px;
+  font-weight: 700;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.15s ease;
+}
+
+.btn-primary {
+  background: var(--accent-green);
+  color: #ffffff;
+}
+
+.btn-primary:hover {
+  background: var(--accent-green-hover);
+}
+
+.btn-danger {
+  background: var(--danger-color);
+  color: #ffffff;
+}
+
+.btn-danger:hover {
+  background: var(--danger-hover);
+}
+
+.btn-accent {
+  background: var(--accent-green);
+  color: #ffffff;
+}
+
+.btn-accent:hover:not(:disabled) {
+  background: var(--accent-green-hover);
+}
+
+.btn-accent:disabled, .btn-secondary:disabled {
+  opacity: 0.35;
+  cursor: not-allowed;
+  background: var(--input-bg);
+  color: var(--text-muted);
+}
+
+.btn-secondary {
+  background: var(--input-bg);
+  border: 1px solid var(--border-color);
+  color: var(--text-primary);
+}
+
+.btn-secondary:hover:not(:disabled) {
+  background: var(--bg-card-hover);
+}
+
+/* Progress Container */
+.progress-container {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.progress-bar-bg {
+  width: 100%;
+  height: 6px;
+  background: var(--input-bg);
+  border-radius: 4px;
+  overflow: hidden;
+}
+
+.progress-bar-fill {
+  height: 100%;
+  background: var(--accent-green);
+  transition: width 0.2s ease;
+}
+
+.progress-status-text {
+  display: flex;
+  justify-content: space-between;
+  font-size: 11px;
+  color: var(--text-secondary);
+}
+
+/* Section 3: Summary & Export Card */
+.export-card {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.summary-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.summary-label {
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--text-primary);
+}
+
+.count-badge {
+  background: var(--accent-green-light);
+  color: var(--accent-green);
+  font-size: 12px;
+  font-weight: 700;
+  padding: 3px 10px;
+  border-radius: 12px;
+}
+
+.export-actions {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.hidden {
+  display: none !important;
+}
+
+/* Toast Notification */
+.toast {
+  position: fixed;
+  bottom: 16px;
+  left: 50%;
+  transform: translateX(-50%);
+  background: var(--bg-card);
+  color: var(--text-primary);
+  border: 1px solid var(--accent-green);
+  font-size: 12px;
+  font-weight: 600;
+  padding: 9px 18px;
+  border-radius: 20px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.5);
+  z-index: 99;
+}

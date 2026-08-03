@@ -1,0 +1,30 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 36" width="200" height="36">
+  <defs>
+    <linearGradient id="waverouteGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#00ff88" />
+      <stop offset="100%" stop-color="#00c853" />
+    </linearGradient>
+  </defs>
+
+  <!-- Logo Icon Badge -->
+  <rect x="2" y="2" width="32" height="32" rx="9" fill="#141417" stroke="#26262a" stroke-width="1.2" />
+  
+  <!-- Stylized Vector W inside badge -->
+  <path d="M 8.5 10 L 13 24 L 17 14 L 21 24 L 25.5 10" 
+        fill="none" 
+        stroke="url(#waverouteGradient)" 
+        stroke-width="3" 
+        stroke-linecap="round" 
+        stroke-linejoin="round" />
+
+  <!-- Brand Typography -->
+  <text x="44" y="24" 
+        font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', sans-serif" 
+        font-size="18" 
+        font-weight="800" 
+        letter-spacing="-0.5">
+    <tspan fill="url(#waverouteGradient)">W</tspan>
+    <tspan fill="#f4f4f5">averoute</tspan>
+    <tspan fill="#00c853">.pins</tspan>
+  </text>
+</svg>
